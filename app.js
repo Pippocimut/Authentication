@@ -70,6 +70,15 @@ app.use(authRoutes);
 
 app.use(errorController.get404);
 
+app.use((error, req, res, next) => {
+  res.status(500).render('500', {
+    pageTitle: 'Server Error',
+    path: '/500',
+    isAuthenticated: req.session.isLoggedIn,
+    error : error
+  });
+});
+
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
