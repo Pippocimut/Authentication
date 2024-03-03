@@ -20,6 +20,6 @@ Once logged in to the website they will be able to see the Secret Page on the na
 If a user fogets their password, the website is capable of sending an Email to the user with a timed token that will allowe the user to change their password.
 
 ## Unauthorized Screen
-![alt text](https://github.com/Pippocimut/Authentication/UnAuthorized.png?raw=true)
+![alt text](https://github.com/Pippocimut/Authentication/blob/main/UnAuthorized.png?raw=true)
 ## Authorized Screen
-![alt text](https://github.com/Pippocimut/Authentication/Authorized.png?raw=true)
+![alt text](https://github.com/Pippocimut/Authentication/blob/main/Authorized.png?raw=true)
