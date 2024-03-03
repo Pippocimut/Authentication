@@ -1,5 +1,5 @@
 # Authentication
-One of my 32 skill to becomeing a Node Developer 
+One of my 32 skill to becoming a Node Developer 
 Authentication is a small website made only to test the authentication of a user 
 
 ## Requirements
