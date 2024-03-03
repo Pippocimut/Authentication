@@ -1,5 +1,6 @@
 # Authentication
 One of my 32 skill to becoming a Node Developer 
+
 Authentication is a small website made only to test the authentication of a user 
 
 ## Requirements
@@ -10,7 +11,9 @@ Authentication is a small website made only to test the authentication of a user
 ## How it works?
 
 A user can register and login with the right buttons.
+
 A surface level valdiation is executed to ensure the user uses valid Email and Password format.
+
 Once logged in to the website they will be able to see the Secret Page on the navigation header.
 
 ### Forgot your password?
