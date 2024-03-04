@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
-const errorController = require('./controllers/error');
 const User = require('./models/user');
 const dotenv = require('dotenv')
 dotenv.config()
@@ -14,6 +13,9 @@ dotenv.config()
 const MONGODB_URI = process.env.MONGODB_URI
 
 const app = express();
+
+
+//Storing the session in the database
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions'
@@ -35,7 +37,6 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(express.static(path.join(__dirname, 'pages/public')));
 app.use('/images',express.static(path.join(__dirname, 'images')));
 
@@ -68,7 +69,13 @@ app.use((req, res, next) => {
 app.use(shopRoutes);
 app.use(authRoutes);
 
-app.use(errorController.get404);
+app.use((req, res, next) => {
+  res.status(404).render('404', {
+    pageTitle: 'Page Not Found',
+    path: '/404',
+    isAuthenticated: req.session.isLoggedIn
+  });
+});
 
 app.use((error, req, res, next) => {
   res.status(500).render('500', {
