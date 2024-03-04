@@ -14,6 +14,8 @@ A user can register and login with the right buttons.
 
 A surface level valdiation is executed to ensure the user uses valid Email and Password format.
 
+After an user verifies it's email using the link sent to them, their account becomes active and can log in.
+
 Once logged in to the website they will be able to see the Secret Page on the navigation header.
 
 ### Forgot your password?
